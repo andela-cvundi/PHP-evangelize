@@ -1,15 +1,21 @@
 <?php
 class GithubApi
 {
-    public function getRepos($username)
+    protected $username;
+    public function __construct($username)
     {
-        $url = "https://api.github.com/users/{$username}/repos";
+        $this->username = $username;
+    }
+
+    public function getRepos()
+    {
+        $url = "https://api.github.com/users/{$this->username}/repos";
         $response = file_get_contents($url,
             false,
             self::getStreamContext());
         $decoded = json_decode($response, true);
         $number = count($decoded);
-        echo $number;
+        return $number;
     }
 
     public static function getStreamContext()

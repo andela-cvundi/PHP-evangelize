@@ -1,5 +1,6 @@
 <?php
 require_once 'GithubApi.php';
+require_once 'EvangelistStatus.php';
 
-$repos = new GithubApi();
-$repos->getRepos("andela-cganga");
+$user = new EvangelistStatus("andela-cvundi");
+echo $user->getStatus();

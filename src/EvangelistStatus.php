@@ -1,5 +1,7 @@
 <?php
-require_once 'GithubApi.php';
+
+namespace Vundi\Checkpoint1;
+use Vundi\Checkpoint1\GithubApi;
 
 class EvangelistStatus
 {

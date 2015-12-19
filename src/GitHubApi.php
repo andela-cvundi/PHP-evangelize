@@ -1,4 +1,6 @@
 <?php
+namespace Vundi\Checkpoint1;
+
 class GithubApi
 {
     protected $username;
@@ -25,7 +27,7 @@ class GithubApi
         // is too large
         $options  = [
                 'http' => [
-                    'user_agent' => 'CV/1.0.0'
+                    'user_agent' => '1.0.0'
                 ]
             ];
         return stream_context_create($options);

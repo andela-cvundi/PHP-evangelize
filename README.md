@@ -2,12 +2,13 @@
 
 PHP evangelize is a PHP package that tells a user what type of evangelist He/She is based of the number of public repositories they own on Github.
 
+## Installation
 
-## Install
-
-- composer require vundi/phpevangelize
-- Run:
-    composer install
+Inside your project folder, run this
+``` bash
+$ composer require vundi/phpevangelize
+$ composer install
+```
 
 
 ## Sample Usage
@@ -30,3 +31,5 @@ echo $user->getStatus();
 ## License
 
 The MIT License (MIT). Please see [License File](https://opensource.org/licenses/MIT) for more information.
+
+[link-author]: https://github.com/andela-cvundi

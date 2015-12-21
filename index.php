@@ -1,5 +1,6 @@
 <?php
 require 'vendor/autoload.php';
+
 use Vundi\Checkpoint1\GithubApi;
 use Vundi\Checkpoint1\EvangelistStatus;
 

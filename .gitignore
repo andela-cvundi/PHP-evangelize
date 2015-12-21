@@ -1,4 +1,5 @@
-build
+/vendor
+index.php
+.env
+/build
 composer.lock
-docs
-vendor

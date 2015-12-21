@@ -12,8 +12,8 @@ matrix:
     - php: 7.0
 
 before_script:
-  - travis_retry composer self-update
-  - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-source
+  - composer install
+  - composer dump-autoload
 
 script:
   - vendor/bin/phpunit -c phpunit.xml

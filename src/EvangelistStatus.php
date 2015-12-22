@@ -7,6 +7,7 @@
  */
 
 namespace Vundi\Checkpoint1;
+
 use Vundi\Checkpoint1\GithubApi;
 
 class EvangelistStatus
@@ -44,7 +45,7 @@ class EvangelistStatus
         } elseif ($this->githubApi->getRepos() >= 21) {
             return "Damn It!!! Please make the world better, Oh Ye Prodigal Junior Evangelist";
         } else {
-            return "You don't qualify to be called an eveangelist....whatsoever";
+            return "You don't qualify to be called an evangelist....whatsoever";
         }
     }
 

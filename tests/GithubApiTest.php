@@ -30,7 +30,7 @@ class GithubApiTest extends PHPUnit_Framework_TestCase
     {
         $user = new GithubApi("andela-cvundi");
         $type = $user->getUsername();
-        $this->assertinternalType('string', $type);
+        $this->assertInternalType('string', $type);
     }
 
 }

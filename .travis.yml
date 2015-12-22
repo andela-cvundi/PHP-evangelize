@@ -18,3 +18,9 @@ before_script:
 script:
   - vendor/bin/phpunit -c phpunit.xml
 
+after_script:
+  - php vendor/bin/coveralls -v
+
+after_script:
+  - php vendor/bin/coveralls -v
+

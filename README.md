@@ -1,6 +1,9 @@
 # PHP evangelize
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/andela-cvundi/PHP-evangelize/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/andela-cvundi/PHP-evangelize/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/andela-cvundi/PHP-evangelize/badges/build.png?b=master)](https://scrutinizer-ci.com/g/andela-cvundi/PHP-evangelize/build-status/master)
+[![Code Coverage](https://scrutinizer-ci.com/g/andela-cvundi/PHP-evangelize/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/andela-cvundi/PHP-evangelize/?branch=master)
 
-PHP evangelize is a PHP package that tells a user what type of evangelist He/She is based of the number of public repositories they own on Github.
+PHP evangelize is a PHP package that tells a user what type of evangelist He/She is based on the number of public repositories they own on Github.
 
 ## Installation
 

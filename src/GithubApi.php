@@ -6,6 +6,7 @@
  *  is provided.
  */
 namespace Vundi\Checkpoint1;
+use GuzzleHttp\Client;
 
 class GithubApi
 {
@@ -37,7 +38,7 @@ class GithubApi
     public function getRepos()
     {
         $url = "https://api.github.com/users/{$this->username}/repos";
-        $client = new GuzzleHttp\Client();
+        $client = new Client();
         //will return http response with the body in json format
         $res = $client->request('GET', $url);
         $decoded = json_decode($res->getBody(), true);

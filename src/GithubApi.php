@@ -16,9 +16,12 @@ class GithubApi
      */
     protected $username;
 
-    public function __construct($username)
+    public function __construct($username = null)
     {
         $this->username = $username;
+        if (is_null($username)) {
+            throw new \Exception("You have to pass in a username, Username cannot be null", 1);
+        }
     }
 
     /**
@@ -40,7 +43,10 @@ class GithubApi
         $url = "https://api.github.com/users/{$this->username}/repos";
         $client = new Client();
         //will return http response with the body in json format
-        $res = $client->request('GET', $url);
+        $res = $client->request('GET', $url, ['exceptions' => false]);
+        if ($res->getStatusCode() == 404) {
+            throw new \Exception("The username you passed is not a valid Github username", 1);
+        }
         $decoded = json_decode($res->getBody(), true);
         $number = count($decoded);
         return $number;

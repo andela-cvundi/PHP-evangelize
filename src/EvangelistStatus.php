@@ -25,9 +25,12 @@ class EvangelistStatus
      */
     protected $githubApi;
 
-    public function __construct($username)
+    public function __construct($username = null)
     {
         $this->username = $username;
+        if (is_null($username)) {
+            throw new \Exception("You have to pass in a username, Username cannot be null", 1);
+        }
         $this->githubApi = new GithubApi($this->username);
     }
 

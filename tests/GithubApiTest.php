@@ -13,23 +13,28 @@ use PHPUnit_Framework_TestCase;
 class GithubApiTest extends PHPUnit_Framework_TestCase
 {
 
+    public function setup()
+    {
+        $this->user = new GithubApi("andela-cvundi");
+    }
+
     public function testGithubApiCallReturnsNumberOfRepos()
     {
-        $user = new GithubApi("andela-cvundi");
-        $repos = $user->getRepos();
+        //$user = new GithubApi("andela-cvundi");
+        $repos = $this->user->getRepos();
         $this->assertInternalType('int', $repos);
     }
 
     public function testUsernameIsNotNull()
     {
-        $user = new GithubApi("andela-cvundi");
-        $this->assertNotNull($user);
+        //$user = new GithubApi("andela-cvundi");
+        $this->assertNotNull($this->user);
     }
 
     public function testNameEnteredIsOfTypeString()
     {
-        $user = new GithubApi("andela-cvundi");
-        $type = $user->getUsername();
+        //$user = new GithubApi("andela-cvundi");
+        $type = $this->user->getUsername();
         $this->assertInternalType('string', $type);
     }
 

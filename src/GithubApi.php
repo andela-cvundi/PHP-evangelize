@@ -6,6 +6,7 @@
  *  is provided.
  */
 namespace Vundi\Checkpoint1;
+use GuzzleHttp\Client;
 
 class GithubApi
 {
@@ -37,27 +38,12 @@ class GithubApi
     public function getRepos()
     {
         $url = "https://api.github.com/users/{$this->username}/repos";
-        $response = file_get_contents($url, false,self::getStreamContext());
-        $decoded = json_decode($response, true);
+        $client = new Client();
+        //will return http response with the body in json format
+        $res = $client->request('GET', $url);
+        $decoded = json_decode($res->getBody(), true);
         $number = count($decoded);
         return $number;
-    }
-
-
-    /**
-     *  @return resource $context
-     */
-    public static function getStreamContext()
-    {
-        // This will solve the failed to open stream: HTTP request failed!
-        // which happens when the  file being returned by file_get_contents
-        // is too large
-        $options  = [
-                'http' => [
-                    'user_agent' => '1.0.0'
-                ]
-            ];
-        return stream_context_create($options);
     }
 
 }

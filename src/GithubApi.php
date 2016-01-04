@@ -5,8 +5,10 @@
  *  the number of repos one owns provided a username
  *  is provided.
  */
+
 namespace Vundi\Checkpoint1;
 use GuzzleHttp\Client;
+use Vundi\Checkpoint1\EvangelizeException;
 
 class GithubApi
 {
@@ -20,7 +22,7 @@ class GithubApi
     {
         $this->username = $username;
         if (is_null($username)) {
-            throw new \Exception("You have to pass in a username, Username cannot be null", 1);
+            throw new EvangelizeException("You have to pass in a username, Username cannot be null", 1);
         }
     }
 
@@ -45,7 +47,7 @@ class GithubApi
         //will return http response with the body in json format
         $res = $client->request('GET', $url, ['exceptions' => false]);
         if ($res->getStatusCode() == 404) {
-            throw new \Exception("The username you passed is not a valid Github username", 1);
+            throw new EvangelizeException("The username you passed is not a valid Github username", 1);
         }
         $decoded = json_decode($res->getBody(), true);
         $number = count($decoded);

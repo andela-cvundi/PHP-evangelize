@@ -9,6 +9,7 @@
 namespace Vundi\Checkpoint1;
 
 use Vundi\Checkpoint1\GithubApi;
+use Vundi\Checkpoint1\EvangelizeException;
 
 class EvangelistStatus
 {
@@ -29,7 +30,7 @@ class EvangelistStatus
     {
         $this->username = $username;
         if (is_null($username)) {
-            throw new \Exception("You have to pass in a username, Username cannot be null", 1);
+            throw new EvangelizeException("You have to pass in a username, Username cannot be null", 1);
         }
         $this->githubApi = new GithubApi($this->username);
     }

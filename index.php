@@ -7,7 +7,7 @@ use Vundi\Checkpoint1\EvangelistStatus;
 try {
     $user = new EvangelistStatus();
     echo $user->getStatus();
-} catch (Exception $e) {
+} catch (EvangelizeException $e) {
     echo $e->getMessage();
 }
 

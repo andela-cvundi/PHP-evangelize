@@ -2,7 +2,7 @@
     "name": "vundi/php-evangelists",
     "description": "A package that tells you what type of evangelist you are depending on the number of public repos you have on github",
     "keywords": ["php evangelists"],
-    "homepage": "https://github.com/andela-cvundi/checkpoint1",
+    "homepage": "https://github.com/andela-cvundi/PHP-evangelize",
     "type": "library",
     "license": "MIT",
     "authors": [

@@ -17,14 +17,23 @@ $ composer install
 ## Sample Usage
 
 ``` php
-<?php
+ <?php
 require 'vendor/autoload.php';
 
 use Vundi\Checkpoint1\GithubApi;
 use Vundi\Checkpoint1\EvangelistStatus;
+use Vundi\Checkpoint1\InvalidUsername;
+use Vundi\Checkpoint1\NoUsernamePassed;
 
-$user = new EvangelistStatus("github-username");
-echo $user->getStatus();
+
+try {
+    $user = new EvangelistStatus("github-username");
+    echo $user->getStatus();
+} catch (InvalidUsername $e) {
+    echo $e->getMessage();
+} catch (NoUsernamePassed $e) {
+    echo $e->getMessage();
+}
 ```
 
 ## Credits

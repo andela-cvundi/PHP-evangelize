@@ -7,8 +7,10 @@
  */
 
 namespace Vundi\Checkpoint1;
+
 use GuzzleHttp\Client;
-use Vundi\Checkpoint1\EvangelizeException;
+use Vundi\Checkpoint1\Exceptions\NoUsernamePassed;
+use Vundi\Checkpoint1\Exceptions\InvalidUsername;
 
 class GithubApi
 {
@@ -20,10 +22,11 @@ class GithubApi
 
     public function __construct($username = null)
     {
-        $this->username = $username;
         if (is_null($username)) {
-            throw new EvangelizeException("You have to pass in a username, Username cannot be null", 1);
+            throw new NoUsernamePassed("You have to pass in a username, Username cannot be null", 1);
         }
+
+        $this->username = $username;
     }
 
     /**
@@ -44,14 +47,16 @@ class GithubApi
     {
         $url = "https://api.github.com/users/{$this->username}/repos";
         $client = new Client();
+
         //will return http response with the body in json format
         $res = $client->request('GET', $url, ['exceptions' => false]);
         if ($res->getStatusCode() == 404) {
-            throw new EvangelizeException("The username you passed is not a valid Github username", 1);
+            throw new InvalidUsername("The username you passed is not a valid Github username", 1);
         }
+
         $decoded = json_decode($res->getBody(), true);
-        $number = count($decoded);
-        return $number;
+
+        return count($decoded);
     }
 
 }

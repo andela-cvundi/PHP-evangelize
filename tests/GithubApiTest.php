@@ -37,7 +37,7 @@ class GithubApiTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Vundi\Checkpoint1\EvangelizeException
+     * @expectedException Vundi\Checkpoint1\Exceptions\NoUsernamePassed
      */
     public function testThrowsAnExceptionIfNoUsernameISPassed()
     {
@@ -45,7 +45,7 @@ class GithubApiTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Vundi\Checkpoint1\EvangelizeException
+     * @expectedException Vundi\Checkpoint1\Exceptions\InvalidUsername
      */
     public function testThrowsAnExceptionIfUsernamePassedIsNotAValidGithubUsername()
     {

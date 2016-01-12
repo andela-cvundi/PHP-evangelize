@@ -7,7 +7,7 @@ PHP evangelize is a PHP package that tells a user what type of evangelist He/She
 
 ## Installation
 
-Inside your project folder, run this
+Inside your project folder, run this commands
 ``` bash
 $ composer require vundi/phpevangelize
 $ composer install
